@@ -1,0 +1,40 @@
+backend:
+  name: git-gateway
+  branch: main
+
+publish_mode: simple
+
+media_folder: "images"
+
+collections:
+  - name: "homilies"
+    label: "Homilies"
+    label_singular: "Homily"
+    folder: "homilies"
+    create: true
+    delete: true
+    format: "json"
+    extension: "json"
+    slug: "{{fields.date}}"
+    editor:
+      preview: false
+    fields:
+      - label: "Date"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        required: true
+
+      - label: "English Homily"
+        name: "en"
+        widget: "text"
+        required: false
+        hint: "Paste the English homily from GPT or VS Code"
+
+      - label: "Spanish Homily"
+        name: "es"
+        widget: "text"
+        required: false
+        hint: "Pega aquí la homilía en español"
