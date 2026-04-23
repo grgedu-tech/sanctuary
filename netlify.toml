@@ -2,7 +2,3 @@
   command = "node build.js"
   publish = "."
 
-[[headers]]
-  for = "/admin/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
